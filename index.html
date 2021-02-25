@@ -1,0 +1,77 @@
+<body>
+    <script>
+        function computerPlay() {
+            let myNumber = Math.floor(Math.random() * 3);
+            if(myNumber == 0){
+                return("ROCK");
+            }
+            else if(myNumber == 1){
+                return("PAPER");
+            }
+            else if(myNumber == 2){
+                return("SCISSORS");
+            }
+        }
+    
+        function playRound(playerSelection, computerSelection) {
+            var areEqual = playerSelection.toUpperCase() === computerSelection;
+            if(playerSelection.toUpperCase() === "ROCK"){
+                if(computerSelection === "SCISSORS"){
+                    return("You win! Rock beats Scissors");
+                }
+                else if(computerSelection === "PAPER"){
+                    return("You lose :( Paper beats Rock");
+                }
+                else if(computerSelection === "ROCK"){
+                    return("It's a draw!");
+                }
+            }
+            else if(playerSelection.toUpperCase() === "SCISSORS"){
+                if(computerSelection === "SCISSORS"){
+                    return("draw!");
+                }
+                else if(computerSelection === "PAPER"){
+                    return("You win :) Scissors cuts paper!");
+                }
+                else if(computerSelection === "ROCK"){
+                    return("You lose! rock crushes your scissors!");
+                }
+            }
+            else if(playerSelection.toUpperCase() === "PAPER"){
+                if(computerSelection === "SCISSORS"){
+                    return("You lose and get cut up!");
+                }
+                else if(computerSelection === "PAPER"){
+                    return("It's a draw!");
+                }
+                else if(computerSelection === "ROCK"){
+                    return("You win! The evil of rock is consumed by paper!");
+                }
+            }
+
+            else{
+                return("You didn't enter a correct input (whoops!)")
+            }
+            
+        }
+
+        function game(numGames) {
+            for(var i = 0; i < numGames; i++){
+                var playerSelection = prompt("Please enter your choice", "Rock/Paper/Scissors");
+                let computerSelection = computerPlay();
+                console.log(playRound(playerSelection, computerSelection));
+
+            }
+            return;
+
+        }
+    
+    
+        var rounds = prompt("How many games would you like to play", "1/2/3/4/5");
+        game(rounds);
+    
+    
+    
+    
+    </script>
+</body>
