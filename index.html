@@ -10,10 +10,17 @@
             justify-self: center;
             align-self: center;
         }
+        #intro {
+            align-self: center;
+        }
 
+        #points {
+            align-self: center;
+        }
         #score {
             align-self: center;
         }
+        
     </style>
 
     
@@ -22,12 +29,17 @@
     <body>
 
 
-        <div style="display: flex; justify-self: center; align-self: center; flex-direction: column;">
+        <div style="display: flex; justify-self: center; align-self: center; flex-direction: column;
+        margin-top: 200px;">
+            <div id="intro"> Welcome to the Rock, Paper, Scissors Arena!</div>
             <button id="rock">Rock</button>
             <button id="paper">Paper</button>
             <button id="scissors">Scissors</button>
             <div id="score">
                 Results are shown here!
+            </div>
+            <div id="points">
+                User Score: here!, CPU Score here!
             </div>
 
 
@@ -39,9 +51,9 @@
 
         <script>
 
-            let playerWins;
-            let cpuWins;
-            let draws;
+            let playerWins = 0;
+            let cpuWins = 0;
+            let draws = 0;
             let currentGame = "";
 
             function computerPlay() {
@@ -132,6 +144,8 @@
                     // console.log(playRound(button.id, computerPlay()));
                     currentGame = playRound(button.id, computerPlay());
                     resultBox.textContent = currentGame;
+                    scoreBox.textContent = "User Wins: " + playerWins + ", CPU Wins: " + cpuWins
+                    + " Draws: " + draws;
                 });
 
             });
@@ -139,6 +153,7 @@
         
             // choose the dom div for "results" and update last hand and total tally
             const resultBox = document.querySelector('#score');
+            const scoreBox = document.querySelector('#points');
             
 
         
