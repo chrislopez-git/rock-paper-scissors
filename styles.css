@@ -1,0 +1,17 @@
+
+
+button {
+    width: 100px;
+    justify-self: center;
+    align-self: center;
+}
+#intro {
+    align-self: center;
+}
+
+#points {
+    align-self: center;
+}
+#score {
+    align-self: center;
+}
