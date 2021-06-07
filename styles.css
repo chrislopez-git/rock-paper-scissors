@@ -5,8 +5,13 @@ button {
     justify-self: center;
     align-self: center;
 }
+
+#gif {
+    align-self: center;
+}
 #intro {
     align-self: center;
+    font-size: 20pt;
 }
 
 #points {
